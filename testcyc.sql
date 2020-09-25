@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 25, 2020 at 07:27 AM
+-- Generation Time: Sep 25, 2020 at 05:37 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -48,7 +48,18 @@ CREATE TABLE `events` (
 
 INSERT INTO `events` (`id`, `title`, `shortdes`, `location`, `mobilenum`, `date`, `bannerimg`, `payment`, `reglink`, `indus`, `sect`, `briefdes`) VALUES
 (7, 'Workshop on Python', 'The FOSSEE team at IIT Bombay offers training programs in Python. These are live assisted remote, interactive workshops. Participants will gain hands-on experience in Python through a series of practice sessions and quizzes. ', 'T. Nagar, Chennai', '9955223311', '2000-09-30', 'assets/images/Python-Programming-Workshop.jpg', 'Free', 'https://www.google.com', 'Computer Science', 'Data Science', 'The FOSSEE team at IIT Bombay offers training programs in Python. These are live assisted remote, interactive workshops. Participants will gain hands-on experience in Python through a series of practice sessions and quizzes. '),
-(9, 'AR Rahman Music Concert', 'AR Rahman is a name that needs no introduction to Indian music fans. To call him just a musician or composer would do his impact and legacy no justice. Experience the Maestro\'s Live Concert in Pune on 22nd February 2020.', 'Pune', '9955223311', '2020-02-02', 'assets/images/ARRLive.jpg', 'Free', 'https://www.axs.com/events/392211/an-evening-with-a-r-rahman-tickets?skin=marymoor', 'Tamil Music', 'Music', 'AR Rahman is a name that needs no introduction to Indian music fans. To call him just a musician or composer would do his impact and legacy no justice. Experience the Maestro\'s Live Concert in Pune on 22nd February 2020.');
+(9, 'AR Rahman Music Concert', 'AR Rahman is a name that needs no introduction to Indian music fans. To call him just a musician or composer would do his impact and legacy no justice. Experience the Maestro\'s Live Concert in Pune on 22nd February 2020.', 'Pune', '9955223311', '2020-02-02', 'assets/images/ARRLive.jpg', 'Free', 'https://www.axs.com/events/392211/an-evening-with-a-r-rahman-tickets?skin=marymoor', 'Tamil Music', 'Music', 'AR Rahman is a name that needs no introduction to Indian music fans. To call him just a musician or composer would do his impact and legacy no justice. Experience the Maestro\'s Live Concert in Pune on 22nd February 2020.'),
+(10, 'Chancey ilaa Anirudh', 'Enjoy Live Concert of Anirudh. Buy tickets now.', 'Chennai', '9955223311', '2020-10-10', 'assets/images/anirudh.jpg', 'Paid', 'https://bookmyshow.com', 'Music', 'Tamil', 'Enjoy Live Concert of Anirudh. Buy tickets now.'),
+(11, 'CSK Whistle Podu !', 'Enjoy Watching CSK play LIVE. Buy tickets now.', 'Chennai', '9955223311', '2020-10-05', 'assets/images/csk.jpg', 'Free', 'https://in.bookmyshow.com/', 'Sports', 'Cricket', 'Enjoy Watching CSK play LIVE. Buy tickets now.'),
+(12, 'Lean Java', 'Learn Java from Industry experts.', 'Madurai', '9955223311', '2020-10-15', 'assets/images/java.jpg', 'Free', 'https://in.bookmyshow.com/', 'Engineering', 'Computer Science', 'Learn Java from Industry experts.'),
+(13, 'SPB Live Concert', 'Enjoy Listening to SPB singing LIVE.', 'Vellore', '9955223311', '2020-10-20', 'assets/images/spb.jpg', 'Free', 'https://in.bookmyshow.com/', 'Music', 'Tamil', 'Enjoy Listening to SPB singing LIVE.'),
+(14, 'Learn PHP Expert Level', 'Learn Php from Industry experts.', 'Coimbatore', '9955223311', '2020-10-21', 'assets/images/php.jpg', 'Free', 'https://in.bookmyshow.com/', 'Engineering', 'Computer Science', 'Learn Php from Industry experts.'),
+(15, 'Learn Swift', 'Learn Swift from Industry experts.', 'Theni', '9955223311', '2020-10-25', 'assets/images/swift.jpeg', 'Free', 'https://in.bookmyshow.com/', 'Engineering', 'Computer Science', 'Learn Swift from Industry experts.'),
+(16, 'Taylor Swift goes live', 'Enjoy watching Tay Tay performing LIVE.', 'Chennai', '9955223311', '2020-10-30', 'assets/images/tay.jpg', 'Paid', 'https://in.bookmyshow.com/', 'Music', 'English', 'Enjoy watching Tay Tay performing LIVE.'),
+(17, 'Ed Sheeran Shapes', 'Enjoy watching Ed Sheeran performing LIVE.', 'Coimbatore', '9955223311', '2020-01-11', 'assets/images/edsheeran.jpg', 'Paid', 'https://in.bookmyshow.com/', 'Music', 'English', 'Enjoy watching Ed Sheeran performing LIVE.'),
+(18, 'Hanzimmer\'s Pirate', 'Enjoy watching Hanzimmer performing LIVE.', 'Madurai', '9955223311', '2020-11-02', 'assets/images/hanz.jpg', 'Paid', 'https://in.bookmyshow.com/', 'Music', 'English', 'Enjoy watching Hanzimmer performing LIVE.'),
+(19, 'Mumbai Indians Rage', 'Watch MI vs SRH Live on Mumbai.', 'Mumbai', '9955223311', '2020-11-03', 'assets/images/mi.jpeg', 'Paid', 'https://in.bookmyshow.com/', 'Sports', 'Cricket', 'Watch MI vs SRH Live on Mumbai.'),
+(20, 'Learn Nodejs', 'Learn nodejs from Industry experts.', 'Coimbatore', '9955223311', '2020-10-13', 'assets/images/nodejs.jpg', 'Paid', 'https://in.bookmyshow.com/', 'Engineering', 'Computer Science', 'Learn nodejs from Industry experts.');
 
 -- --------------------------------------------------------
 
@@ -99,7 +110,7 @@ ALTER TABLE `usertable`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `usertable`
