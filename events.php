@@ -180,7 +180,7 @@ $fetch_info = mysqli_fetch_assoc($run_query);
             echo '
         <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-info"  style=\'background-image: url("'.$row['bannerimg'].'");\'>
               <div class="inner">
                 <h3>'.$row['title'].'</h3>
 
