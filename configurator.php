@@ -35,7 +35,7 @@ if(isset($_POST['signup'])){
         $code = rand(999999, 111111);
         $status = "notverified";
         $insert_data = "INSERT INTO usertable (email, password, code, status, mobile, role,language,content)
-                        values('$email', '$encpass', '$code', '$status' ,'$mobile','USER','en,'en')";
+                        values('$email', '$encpass', '$code', '$status' ,'$mobile','USER','en','en')";
         $data_check = mysqli_query($con, $insert_data);
         if($data_check){
             $mail->Subject = "Email Verification Code";
@@ -73,6 +73,8 @@ if(isset($_POST['check'])){
             if($update_res){
                 $_SESSION['email'] = $email;
                 $_SESSION['role'] = $role;
+                $_SESSION['lang'] = 'en';
+                $_SESSION['content'] = 'en';
                 header('location: dashboard.php');
                 exit();
             }else{
