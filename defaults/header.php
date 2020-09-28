@@ -146,6 +146,14 @@ if($status != 'verified'){
               </p>
             </a>';}
             ?>
+            <li class="nav-item has-treeview menu-open">
+            
+            <a class="nav-link <?php if($htitle=="settings"){echo "active";} ?>" href="settings.php">
+              <i class="nav-icon fas fa-setting"></i>
+              <p><?php echo $stringfetch['settings'];?>
+              </p>
+            </a>
+          </li>
             
       </nav>
       <!-- /.sidebar-menu -->

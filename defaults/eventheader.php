@@ -32,6 +32,8 @@ if(isset($_GET['pay']) && $_GET['pay']!=''){
   if($where==0){$query.="WHERE ";$where=1;}else{$query.="AND ";}
   $query.="`payment` LIKE '%".$key6."%' ";
 }
+if($where==0){$query.="WHERE ";$where=1;}else{$query.="AND ";}
+$query.="clocal='".$_SESSION['content']."'";
 $query.="ORDER BY id DESC;";
 ?>
   <?php if($htitle=="events") {

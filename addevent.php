@@ -32,7 +32,8 @@ if(isset($_POST['addevent'])){
       $error= $stringfetch['event_failed'];
     }
   }
-  $insert_data = "INSERT INTO `events` ( `title`, `shortdes`, `location`, `mobilenum`, `date`, `bannerimg`, `payment`, `reglink`, `indus`, `sect`, `briefdes`) VALUES ('$title', '$sdescrp', '$location', '$mobilenum', '$date', '$target_file', '$payment', '$reglink', '$indus', '$sect', '$bdescrp')";
+  $cc=$_SESSION['content'];
+  $insert_data = "INSERT INTO `events` ( `title`,`clocal`, `shortdes`, `location`, `mobilenum`, `date`, `bannerimg`, `payment`, `reglink`, `indus`, `sect`, `briefdes`) VALUES ('$title','$cc', '$sdescrp', '$location', '$mobilenum', '$date', '$target_file', '$payment', '$reglink', '$indus', '$sect', '$bdescrp')";
   $data_check = mysqli_query($con, $insert_data);
 }
 

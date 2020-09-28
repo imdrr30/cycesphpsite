@@ -37,7 +37,7 @@ require "defaults/header.php";?>
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <?php
-        $result = mysqli_query($con,"SELECT * FROM events");
+        $result = mysqli_query($con,"SELECT * FROM events WHERE clocal='".$_SESSION['content']."'");
         $rowcount=0;
 
         while($row = mysqli_fetch_array($result)){

@@ -12,7 +12,6 @@ if(isset($_GET['lang'])){
     $_SESSION['lang']=$_GET['lang'];
 }
 $lq='SELECT * FROM strings WHERE `lang`= "'.$_SESSION['lang'].'"';
-
 $lquery = mysqli_query($con,$lq);
 $stringfetch = mysqli_fetch_assoc($lquery);
 
@@ -35,8 +34,8 @@ if(isset($_POST['signup'])){
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $status = "notverified";
-        $insert_data = "INSERT INTO usertable (email, password, code, status, mobile, role)
-                        values('$email', '$encpass', '$code', '$status' ,'$mobile','USER')";
+        $insert_data = "INSERT INTO usertable (email, password, code, status, mobile, role,language,content)
+                        values('$email', '$encpass', '$code', '$status' ,'$mobile','USER','en,'en')";
         $data_check = mysqli_query($con, $insert_data);
         if($data_check){
             $mail->Subject = "Email Verification Code";
@@ -100,6 +99,8 @@ if(isset($_POST['login'])){
             if($status == 'verified'){
                 $_SESSION['email'] = $email;
                 $_SESSION['role'] = $role;
+                $_SESSION['lang'] = $fetch['language'];
+                $_SESSION['content'] = $fetch['content'];
                 header('location: dashboard.php');
             }else{
                 $info = $stringfetch['code_message_nt_verified'].$email;
