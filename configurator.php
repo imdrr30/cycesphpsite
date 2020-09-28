@@ -4,14 +4,22 @@ require "config.php";
 $email = "";
 $mobile = "";
 $errors = array();
-if(!isset($_SESSION['lang'])){
+if(!isset($_COOKIE['lang']) || $_COOKIE['lang']==''){
+    setcookie("lang", "en", time()+90*24*60*60);
     $_SESSION['lang']="en";
 }
-if(isset($_GET['lang'])){
-    $mobile = mysqli_real_escape_string($con, $_GET['lang']);
-    $_SESSION['lang']=$_GET['lang'];
+else{
+    $_SESSION['lang']=$_COOKIE['lang'];
+}
+if(!isset($_COOKIE['content']) || $_COOKIE['content']==''){
+    setcookie("content", "en", time()+90*24*60*60);
+    $_SESSION['lang']="en";
+}
+else{
+    $_SESSION['content']=$_COOKIE['content'];
 }
 $lq='SELECT * FROM strings WHERE `lang`= "'.$_SESSION['lang'].'"';
+
 $lquery = mysqli_query($con,$lq);
 $stringfetch = mysqli_fetch_assoc($lquery);
 
@@ -34,8 +42,8 @@ if(isset($_POST['signup'])){
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $status = "notverified";
-        $insert_data = "INSERT INTO usertable (email, password, code, status, mobile, role,language,content)
-                        values('$email', '$encpass', '$code', '$status' ,'$mobile','USER','en','en')";
+        $insert_data = "INSERT INTO usertable (email, password, code, status, mobile, role)
+                        values('$email', '$encpass', '$code', '$status' ,'$mobile','USER')";
         $data_check = mysqli_query($con, $insert_data);
         if($data_check){
             $mail->Subject = "Email Verification Code";
@@ -101,8 +109,10 @@ if(isset($_POST['login'])){
             if($status == 'verified'){
                 $_SESSION['email'] = $email;
                 $_SESSION['role'] = $role;
-                $_SESSION['lang'] = $fetch['language'];
-                $_SESSION['content'] = $fetch['content'];
+                $sesss=md5(uniqid(rand(), true));
+                $updatesess = "UPDATE usertable SET session = '$sesss' WHERE email = '$email'";
+                mysqli_query($con, $updatesess);
+                setcookie("E",$sesss, time()+30*24*60*60);
                 header('location: dashboard.php');
             }else{
                 $info = $stringfetch['code_message_nt_verified'].$email;

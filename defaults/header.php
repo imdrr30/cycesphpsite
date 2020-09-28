@@ -12,6 +12,15 @@ if($status != 'verified'){
     $_SESSION['email'] = $email;
     header('location: verify.php');
   }
+if(isset($_POST['lang']) && $_POST['lang']!=''){
+  $lc = mysqli_real_escape_string($con, $_POST['lang']);
+  setcookie("lang", $lc, time()+90*24*60*60);
+}
+if(isset($_POST['content']) && $_POST['content']!=''){
+  $cc = mysqli_real_escape_string($con, $_POST['content']);
+  setcookie("content", $cc, time()+90*24*60*60);
+  header("location: settings.php");
+}
 ?>
 
 <html style="height: auto;"><head>

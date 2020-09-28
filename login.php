@@ -3,6 +3,14 @@ require_once "configurator.php";
 if (isset($_SESSION['email'])){
     header('location: dashboard.php');
 }
+if(isset($_COOKIE['E'])){
+    $ec = mysqli_real_escape_string($con, $_COOKIE['E']);
+    $ssq = mysqli_query($con,"SELECT email,role FROM usertable WHERE session='$ec'");
+    $ssq2 = mysqli_fetch_assoc($ssq);
+    $_SESSION['email'] = $ssq2['email'];
+    $_SESSION['role'] = $ssq2['role'];
+    header('location: dashboard.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

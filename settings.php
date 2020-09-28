@@ -1,22 +1,9 @@
 <?php 
 $htitle="settings";
 $descrp="settings";
-require_once "defaults/header.php"; 
-if(isset($_POST['lang']) && $_POST['lang']!=''){
-    $lang = mysqli_real_escape_string($con, $_POST['lang']);
-    $sq="UPDATE `usertable` SET `language` = '".$lang."' WHERE `usertable`.`email` = '".$_SESSION['email']."'";
-    mysqli_query($con,$sq);
-    $_SESSION['lang']=$lang;
-    
-}
-if(isset($_POST['content']) && $_POST['content']!=''){
-    $content = mysqli_real_escape_string($con, $_POST['content']);
-    $sq="UPDATE `usertable` SET `content` = '".$content."' WHERE `usertable`.`email` = '".$_SESSION['email']."'";
-    mysqli_query($con,$sq);
-    $_SESSION['content']=$content;
 
+require_once "defaults/header.php"; 
 $querylang = mysqli_query($con,"SELECT * FROM events");
-}
 ?>
 </nav>
   <!-- Content Wrapper. Contains page content -->
