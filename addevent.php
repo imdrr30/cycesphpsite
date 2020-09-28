@@ -1,7 +1,7 @@
 <?php
 
-$htitle="Add Event";
-$descrp="Add New";
+$htitle="add_event";
+$descrp="add_event";
 require "defaults/header.php";
 
 if(isset($_POST['addevent'])){
@@ -22,14 +22,14 @@ if(isset($_POST['addevent'])){
   $error='';
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
   && $imageFileType != "gif" ) {
-    $error= "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $error= $stringfetch['event_failed'];
     $uploadOk = 0;
   }
   if ($uploadOk == 0) {
-    $error= "Sorry, your file was not uploaded.";
+    $error= $stringfetch['event_failed'];
   } else {
     if (!move_uploaded_file($_FILES["bannerimg"]["tmp_name"], $target_file)) {
-      $error= "Sorry, there was an error uploading your file.";
+      $error= $stringfetch['event_failed'];
     }
   }
   $insert_data = "INSERT INTO `events` ( `title`, `shortdes`, `location`, `mobilenum`, `date`, `bannerimg`, `payment`, `reglink`, `indus`, `sect`, `briefdes`) VALUES ('$title', '$sdescrp', '$location', '$mobilenum', '$date', '$target_file', '$payment', '$reglink', '$indus', '$sect', '$bdescrp')";
@@ -46,12 +46,12 @@ if(isset($_POST['addevent'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark"><?php echo $descrp;?></h1>
+            <h1 class="m-0 text-dark"><?php echo $stringfetch[$descrp];?></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active"><?php echo $htitle;?></li>
+              <li class="breadcrumb-item"><a href="#"><?php echo $stringfetch['home'];?></a></li>
+              <li class="breadcrumb-item active"><?php echo $stringfetch[$htitle];?></li>
             </ol>
             
           </div><!-- /.col -->
@@ -85,7 +85,7 @@ if(isset($_POST['addevent'])){
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header" style="background-color: #1fb529;">
-                <h3 class="card-title">Event Added Successfully!!</h3>
+                <h3 class="card-title">'.$stringfetch['event_success'].'</h3>
               </div>
             </div>
       </div>';
@@ -95,51 +95,51 @@ if(isset($_POST['addevent'])){
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Event Details</h3>
+                <h3 class="card-title"><?php echo $stringfetch['event_details'];?></h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form action="" method="post" role="form" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                    <label><?php echo $stringfetch['title_text'];?> </label>
+                    <input type="text" name="title" class="form-control" placeholder="<?php echo $stringfetch['enter_title'];?>">
                   </div>
                   <div class="form-group">
-                    <label >Short Description</label>
-                    <textarea name="sdescrp" class="form-control" placeholder="Write Description"></textarea>
+                    <label ><?php echo $stringfetch['sdescript'];?></label>
+                    <textarea name="sdescrp" class="form-control" placeholder="<?php echo $stringfetch['enter_sdescript'];?>"></textarea>
                   </div>
                   <div class="row">
                   <div class="col-6">
-                    <label >Location</label>
-                    <input type="text" name="location" class="form-control" placeholder="Enter Location">
+                    <label ><?php echo $stringfetch['location'];?></label>
+                    <input type="text" name="location" class="form-control" placeholder="<?php echo $stringfetch['enter_location'];?>">
                   </div>
                   <div class="col-6">
-                    <label >Date</label>
-                    <input type="date" name="date" class="form-control" placeholder="Enter Date">
-                  </div>
-                  </div>
-                  <div class="row">
-                  <div class="col-6">
-                    <label >Industries</label>
-                    <input type="text" name="indus" class="form-control" placeholder="Enter Industry">
-                  </div>
-                  <div class="col-6">
-                    <label >Sector</label>
-                    <input type="text" name="sect" class="form-control" placeholder="Enter Sector">
+                    <label ><?php echo $stringfetch['date'];?></label>
+                    <input type="date" name="date" class="form-control" placeholder="">
                   </div>
                   </div>
                   <div class="row">
                   <div class="col-6">
-                    <label>Mobile Number</label>
-                    <input type="text" name="mobilenum" class="form-control" placeholder="Enter Mobile Number">
+                    <label ><?php echo $stringfetch['industry'];?></label>
+                    <input type="text" name="indus" class="form-control" placeholder="<?php echo $stringfetch['enter_industry'];?>">
                   </div>
                   <div class="col-6">
-                    <label for="exampleInputFile">File input</label>
+                    <label ><?php echo $stringfetch['sector'];?></label>
+                    <input type="text" name="sect" class="form-control" placeholder="<?php echo $stringfetch['enter_sector'];?>">
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-6">
+                    <label><?php echo $stringfetch['phone_num'];?></label>
+                    <input type="text" name="mobilenum" class="form-control" placeholder="<?php echo $stringfetch['enter_mobile'];?>">
+                  </div>
+                  <div class="col-6">
+                    <label for="exampleInputFile"><?php echo $stringfetch['banner_event'];?></label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" name="bannerimg" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <label class="custom-file-label" for="exampleInputFile"><?php echo $stringfetch['choosefile'];?></label>
                       </div>
                   
                     </div>
@@ -147,32 +147,32 @@ if(isset($_POST['addevent'])){
                   </div>
                   <div class="row">
                   <div class="form-group" style="margin-left: 10px;margin-right: 363px;">
-                  <label>Event Payment</label>
+                  <label><?php echo $stringfetch['event_payment'];?></label>
                   <div class="row">
                         <div class="form-check" style="margin-right: 20px;margin-left: 10px;">
                           <input class="form-check-input" type="radio" value="Free" name="payment" checked="">
-                          <label class="form-check-label">Free</label>
+                          <label class="form-check-label"><?php echo $stringfetch['free'];?></label>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" type="radio" value="Paid" name="payment">
-                          <label class="form-check-label">Paid</label>
+                          <label class="form-check-label"><?php echo $stringfetch['paid'];?></label>
                         </div>
                         </div>
                       </div>
                   <div class="col-6">
-                    <label >Registration Link</label>
-                    <input type="text" name="reglink" class="form-control" placeholder="Link to Form">
+                    <label ><?php echo $stringfetch['reglink'];?></label>
+                    <input type="text" name="reglink" class="form-control" placeholder="<?php echo $stringfetch['link_to_form'];?>">
                   </div>
                   </div>
                   <div class="form-group">
-                    <label >Brief</label>
-                    <textarea name="bdescrp" class="form-control" placeholder="Brief Description"></textarea>
+                    <label ><?php echo $stringfetch['bdescript'];?></label>
+                    <textarea name="bdescrp" class="form-control" placeholder="<?php echo $stringfetch['enter_bdescript'];?>"></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <input type="submit" class="btn btn-primary float-right" value="Submit" name="addevent">
+                  <button type="submit" class="btn btn-primary float-right" value="Submit" name="addevent"><?php echo $stringfetch['submit'];?></button>
                 </div>
               </form>
             </div>

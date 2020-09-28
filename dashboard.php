@@ -1,6 +1,6 @@
 <?php
-$htitle="Dashboard";
-$descrp="Dashboard";
+$htitle="dashboard";
+$descrp="dashboard";
 require "defaults/header.php";?>
 </nav>
   <!-- Content Wrapper. Contains page content -->
@@ -10,12 +10,12 @@ require "defaults/header.php";?>
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark"><?php echo $descrp;?></h1>
+            <h1 class="m-0 text-dark"><?php echo $stringfetch[$descrp];?></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active"><?php echo $htitle;?></li>
+              <li class="breadcrumb-item"><a href="#"><?php echo $stringfetch['home'];?></a></li>
+              <li class="breadcrumb-item active"><?php echo $stringfetch[$htitle];?></li>
             </ol>
             
           </div><!-- /.col -->

@@ -1,6 +1,6 @@
 <?php 
-$htitle="Events";
-$descrp="All Events";
+$htitle="events";
+$descrp="all_events";
 require_once "defaults/eventheader.php";
 ?>
 
@@ -24,11 +24,11 @@ require_once "defaults/eventheader.php";
     if(isset($_GET['ind']) && $_GET['ind']!=''){
       echo $_GET['ind'].'" selected="selected';
     }
-    ?>">Industry</option>
+    ?>"><?php echo $stringfetch['industry'];?></option>
     
-    <option class="dropdown-item" value="Engineering">Engineering</option>
-    <option class="dropdown-item" value="Music">Music</option>
-    <option class="dropdown-item" value="Education">Education</option>
+    <option class="dropdown-item" value="Engineering"><?php echo $stringfetch['engineering'];?></option>
+    <option class="dropdown-item" value="Music"><?php echo $stringfetch['music'];?></option>
+    <option class="dropdown-item" value="Education"><?php echo $stringfetch['educ'];?></option>
   </div>
   </select>
 
@@ -40,10 +40,10 @@ require_once "defaults/eventheader.php";
     if(isset($_GET['sec']) && $_GET['sec']!=''){
       echo $_GET['sec'].'" selected="selected';
     }
-    ?>">Sector</option>
-    <option class="dropdown-item" value="English">English</option>
-    <option class="dropdown-item" value="Tamil">Tamil</option>
-    <option class="dropdown-item" value="Computer Science">Computer</option>
+    ?>"><?php echo $stringfetch['sector'];?></option>
+    <option class="dropdown-item" value="English"><?php echo $stringfetch['english'];?></option>
+    <option class="dropdown-item" value="Tamil"><?php echo $stringfetch['tamil'];?></option>
+    <option class="dropdown-item" value="Computer Science"><?php echo $stringfetch['computer'];?></option>
   </div>
   </select>
 
@@ -53,11 +53,11 @@ require_once "defaults/eventheader.php";
     if(isset($_GET['loc']) && $_GET['loc']!=''){
       echo $_GET['loc'].'" selected="selected';
     }
-    ?>">Location</option>
-    <option class="dropdown-item" value="Chennai">Chennai</option>
-    <option class="dropdown-item" value="Madurai">Madurai</option>
-    <option class="dropdown-item" value="Coimbatore">Coimbatore</option>
-    <option class="dropdown-item" value="Mumbai">Mumbai</option>
+    ?>"><?php echo $stringfetch['location'];?></option>
+    <option class="dropdown-item" value="Chennai"><?php echo $stringfetch['chennai'];?></option>
+    <option class="dropdown-item" value="Madurai"><?php echo $stringfetch['madurai'];?></option>
+    <option class="dropdown-item" value="Coimbatore"><?php echo $stringfetch['coimbatore'];?></option>
+    <option class="dropdown-item" value="Mumbai"><?php echo $stringfetch['mumbai'];?></option>
   </div>
   </select>
 
@@ -67,11 +67,11 @@ require_once "defaults/eventheader.php";
     if(isset($_GET['date']) && $_GET['date']!=''){
       echo $_GET['date'].'" selected="selected';
     }
-    ?>">Date</option>
-    <option class="dropdown-item" value="today">Today</option>
-    <option class="dropdown-item" value="tomorrow">Tomorrow</option>
-    <option class="dropdown-item" value="week">Within a Week</option>
-    <option class="dropdown-item" value="month">Within a Month</option>
+    ?>"><?php echo $stringfetch['date'];?></option>
+    <option class="dropdown-item" value="today"><?php echo $stringfetch['today'];?></option>
+    <option class="dropdown-item" value="tomorrow"><?php echo $stringfetch['tomorrow'];?></option>
+    <option class="dropdown-item" value="week"><?php echo $stringfetch['week'];?></option>
+    <option class="dropdown-item" value="month"><?php echo $stringfetch['month'];?></option>
   </div>
   </select>
   <select name="pay" class="btn btn-primary dropdown-toggle" style="margin-left: 10px;margin-bottom: 15px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
@@ -80,12 +80,12 @@ require_once "defaults/eventheader.php";
     if(isset($_GET['pay']) && $_GET['pay']!=''){
       echo $_GET['pay'].'" selected="selected';
     }
-    ?>">Free or Paid</option>
-    <option class="dropdown-item" value="free">Free</option>
-    <option class="dropdown-item" value="paid">Paid</option>
+    ?>"><?php echo $stringfetch['payment'];?></option>
+    <option class="dropdown-item" value="free"><?php echo $stringfetch['free'];?></option>
+    <option class="dropdown-item" value="paid"><?php echo $stringfetch['paid'];?></option>
   </div>
   </select>
-  <button class="btn btn-secondary" style="margin-left: 10px;margin-bottom: 15px;">Apply Filter</button>
+  <button class="btn btn-secondary" style="margin-left: 10px;margin-bottom: 15px;"><?php echo $stringfetch['apply_filter'];?></button>
 </div>
 </form>
         <?php

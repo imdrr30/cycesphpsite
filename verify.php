@@ -17,7 +17,7 @@ if($status == 'verified'){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Code Verification</title>
+    <title><?php echo $stringfetch['code_verif'];?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -27,7 +27,7 @@ if($status == 'verified'){
             <div class="col-md-4 offset-md-4 form">
                 <form action="verify.php" method="POST" autocomplete="off">
                     <h2 class="text-center">
-Code Verification</h2>
+                    <?php echo $stringfetch['code_verif'];?></h2>
 <?php 
                     if(isset($_SESSION['info'])){
                         ?>
@@ -51,10 +51,10 @@ Code Verification</h2>
                     }
                     ?>
                     <div class="form-group">
-                        <input class="form-control" type="number" name="otp" placeholder="Enter verification code" required>
+                        <input class="form-control" type="number" name="otp" placeholder="<?php echo $stringfetch['enter_verif_code'];?>" required>
                     </div>
 <div class="form-group">
-                        <input class="form-control button" type="submit" name="check" value="Submit">
+                        <button class="form-control button" type="submit" name="check" value="Submit"><?php echo $stringfetch['submit'];?></button>
                     </div>
 </form>
 </div>
