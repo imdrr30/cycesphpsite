@@ -1,6 +1,6 @@
 <?php
 require_once "defaults/header.php"; 
-
+$where=0;
 $query="SELECT * FROM events ";
 if(isset($_GET['q']) && $_GET['q']!=''){
   $key1 = mysqli_real_escape_string($con, $_GET['q']);
@@ -34,7 +34,7 @@ if(isset($_GET['pay']) && $_GET['pay']!=''){
 }
 $query.="ORDER BY id DESC;";
 ?>
-  <?php if($htitle=="Events") {
+  <?php if($htitle=="events") {
      $result = mysqli_query($con,$query);
      $rowcount=mysqli_num_rows($result);
      if($rowcount%5!=0){
@@ -72,12 +72,12 @@ $query.="ORDER BY id DESC;";
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark"><?php echo $descrp;?></h1>
+            <h1 class="m-0 text-dark"><?php echo $stringfetch[$descrp];?></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active"><?php echo $htitle;?></li>
+              <li class="breadcrumb-item"><a href="#"><?php echo $stringfetch['home'];?></a></li>
+              <li class="breadcrumb-item active"><?php echo $stringfetch[$descrp];?></li>
             </ol>
             
           </div><!-- /.col -->

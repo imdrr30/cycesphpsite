@@ -17,7 +17,7 @@ if($status != 'verified'){
 <html style="height: auto;"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo $htitle;?></title>
+  <title><?php echo $stringfetch[$htitle];?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -54,17 +54,17 @@ if($status != 'verified'){
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a class="nav-link" href="dashboard.php">Home</a>
+        <a class="nav-link" href="dashboard.php"><?php echo $stringfetch['home'];?></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a class="nav-link" href="logout.php">Logout</a>
+        <a class="nav-link" href="logout.php"><?php echo $stringfetch['logout'];?></a>
       </li>
     </ul>
 
     <!-- SEARCH FORM -->
     <form action="events.php" class="form-inline ml-3">
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" name="q" <?php if(isset($_GET['q'])){echo 'value="'.$_GET['q'].'"';}?> placeholder="Search" aria-label="Search">
+        <input class="form-control form-control-navbar" type="search" name="q" <?php if(isset($_GET['q'])){echo 'value="'.$_GET['q'].'"';}?> placeholder="<?php echo $stringfetch['search'];?>" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-navbar" type="submit">
             <i class="fas fa-search"></i>
@@ -96,7 +96,7 @@ if($status != 'verified'){
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Cyces</span>
+      <span class="brand-text font-weight-light"><?php echo $stringfetch['brand'];?></span>
     </a>
 
     <!-- Sidebar -->
@@ -117,10 +117,10 @@ if($status != 'verified'){
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a class="nav-link <?php if($htitle=="Dashboard"){echo "active";} ?>" href="dashboard.php">
+            <a class="nav-link <?php if($htitle=="dashboard"){echo "active";} ?>" href="dashboard.php">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+              <?php echo $stringfetch['dashboard'];?>
                 
               </p>
             </a>
@@ -128,9 +128,9 @@ if($status != 'verified'){
           </li>
           <li class="nav-item has-treeview menu-open">
             
-            <a class="nav-link <?php if($htitle=="Events"){echo "active";} ?>" href="events.php">
+            <a class="nav-link <?php if($htitle=="events"){echo "active";} ?>" href="events.php">
               <i class="nav-icon fas fa-chart-pie"></i>
-              <p>Events
+              <p><?php echo $stringfetch['events'];?>
               </p>
             </a>
           </li>
@@ -139,10 +139,10 @@ if($status != 'verified'){
             echo '
           <li class="nav-item has-treeview menu-open">
             <a class="nav-link ';
-            if($htitle=="Add Event"){echo "active";}
+            if($htitle=="add_event"){echo "active";}
             echo '" href="addevent.php">
               <i class="nav-icon fas fa-edit"></i>
-              <p>Add Event
+              <p>'.$stringfetch['add_event'].'
               </p>
             </a>';}
             ?>
