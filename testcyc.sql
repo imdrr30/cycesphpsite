@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 25, 2020 at 05:37 PM
+-- Generation Time: Sep 28, 2020 at 12:39 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -64,6 +64,95 @@ INSERT INTO `events` (`id`, `title`, `shortdes`, `location`, `mobilenum`, `date`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `strings`
+--
+
+CREATE TABLE `strings` (
+  `id` int(11) NOT NULL,
+  `lang` text NOT NULL,
+  `login` text DEFAULT NULL,
+  `greetings` text DEFAULT NULL,
+  `brand_full` text NOT NULL,
+  `brand` text NOT NULL,
+  `email` text NOT NULL,
+  `pass` text NOT NULL,
+  `incorrect` text NOT NULL,
+  `not_a_member` text NOT NULL,
+  `signup` text NOT NULL,
+  `member_message` text NOT NULL,
+  `sup_n` text DEFAULT NULL,
+  `s_greetings` text DEFAULT NULL,
+  `email_address` text DEFAULT NULL,
+  `cpass` text DEFAULT NULL,
+  `phone_num` text DEFAULT NULL,
+  `exist_mem` text DEFAULT NULL,
+  `login_here` text DEFAULT NULL,
+  `email_exists` text DEFAULT NULL,
+  `passntmatched` text DEFAULT NULL,
+  `code_verif` text DEFAULT NULL,
+  `code_message` text DEFAULT NULL,
+  `code_message_nt_verified` text DEFAULT NULL,
+  `enter_verif_code` text DEFAULT NULL,
+  `code_inc` text DEFAULT NULL,
+  `home` text DEFAULT NULL,
+  `logout` text DEFAULT NULL,
+  `search` text DEFAULT NULL,
+  `all_events` text DEFAULT NULL,
+  `add_event` text DEFAULT NULL,
+  `dashboard` text DEFAULT NULL,
+  `events` text DEFAULT NULL,
+  `industry` text DEFAULT NULL,
+  `location` text DEFAULT NULL,
+  `sector` text DEFAULT NULL,
+  `date` text DEFAULT NULL,
+  `payment` text DEFAULT NULL,
+  `apply_filter` text DEFAULT NULL,
+  `engineering` text DEFAULT NULL,
+  `music` text DEFAULT NULL,
+  `educ` text DEFAULT NULL,
+  `english` text DEFAULT NULL,
+  `tamil` text DEFAULT NULL,
+  `computer` text DEFAULT NULL,
+  `chennai` text DEFAULT NULL,
+  `madurai` text DEFAULT NULL,
+  `coimbatore` text DEFAULT NULL,
+  `mumbai` text DEFAULT NULL,
+  `today` text DEFAULT NULL,
+  `tomorrow` text DEFAULT NULL,
+  `week` text DEFAULT NULL,
+  `month` text DEFAULT NULL,
+  `free` text DEFAULT NULL,
+  `paid` text DEFAULT NULL,
+  `event_details` text DEFAULT NULL,
+  `title_text` text DEFAULT NULL,
+  `enter_title` text DEFAULT NULL,
+  `sdescript` text DEFAULT NULL,
+  `enter_sdescript` text DEFAULT NULL,
+  `bdescript` text DEFAULT NULL,
+  `enter_bdescript` text DEFAULT NULL,
+  `enter_location` text DEFAULT NULL,
+  `enter_mobile` text DEFAULT NULL,
+  `banner_event` text DEFAULT NULL,
+  `choosefile` text DEFAULT NULL,
+  `event_payment` text DEFAULT NULL,
+  `reglink` text DEFAULT NULL,
+  `link_to_form` text DEFAULT NULL,
+  `submit` text DEFAULT NULL,
+  `event_success` text DEFAULT NULL,
+  `event_failed` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `strings`
+--
+
+INSERT INTO `strings` (`id`, `lang`, `login`, `greetings`, `brand_full`, `brand`, `email`, `pass`, `incorrect`, `not_a_member`, `signup`, `member_message`, `sup_n`, `s_greetings`, `email_address`, `cpass`, `phone_num`, `exist_mem`, `login_here`, `email_exists`, `passntmatched`, `code_verif`, `code_message`, `code_message_nt_verified`, `enter_verif_code`, `code_inc`, `home`, `logout`, `search`, `all_events`, `add_event`, `dashboard`, `events`, `industry`, `location`, `sector`, `date`, `payment`, `apply_filter`, `engineering`, `music`, `educ`, `english`, `tamil`, `computer`, `chennai`, `madurai`, `coimbatore`, `mumbai`, `today`, `tomorrow`, `week`, `month`, `free`, `paid`, `event_details`, `title_text`, `enter_title`, `sdescript`, `enter_sdescript`, `bdescript`, `enter_bdescript`, `enter_location`, `enter_mobile`, `banner_event`, `choosefile`, `event_payment`, `reglink`, `link_to_form`, `submit`, `event_success`, `event_failed`) VALUES
+(1, 'eng', 'Login', 'Hello there! Welcome Back', 'Tamil Nadu Startup And Innovation Mission', 'TANSIM', 'Email', 'Password', 'Incorrect email or password! ', 'Not yet a member?', 'Signup Now', 'It\'s look like you\'re not a yet member! Click on the bottom link to signup. ', 'Signup', 'It\'s quick and easy.', 'Email Address', 'Confirm password', 'Mobile Number', 'Already a member?', 'Login here', 'Email that you have entered is already exist!', 'Confirm password not matched!', 'Code Verification', 'We\'ve sent a verification code to your email - ', 'It\'s look like you haven\'t still verify your email - ', 'Enter verification code', 'You\'ve entered incorrect code!', 'Home', 'Logout', 'Search', 'All Events', 'Add New', 'Dashboard', 'Events', 'Industry', 'Location', 'Sector', 'Date', 'Free or Paid', 'Apply Filter', 'Engineering', 'Music', 'Education', 'English', 'Tamil', 'Computer', 'Chennai', 'Madurai', 'Coimbatore', 'Mumbai', 'Today', 'Tomorrow', 'Week', 'Month', 'Free', 'Paid', 'Event Details', 'Title', 'Enter title', 'Short Description', 'Enter short description', 'Brief Description', 'Enter brief description', 'Enter location', 'Enter mobile', 'Event Banner image', 'Choose File', 'Event Payment', 'Registration Link', 'Link to form', 'Submit', 'Event Added Successfully!!', 'Sorry, Event was not added.'),
+(2, 'ta', 'உள்நுழை', 'வணக்கம்!', '\r\nதமிழ்நாடு தொடக்க மற்றும் கண்டுபிடிப்பு பணி', 'டான்சிம்', 'மின்னஞ்சல்', 'கடவுச்சொல்', 'தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்!', 'உறுப்பினர் அல்ல', 'பதிவுபெறு', 'நீங்கள் இன்னும் உறுப்பினராக இல்லை என்பது போல் தெரிகிறது! பதிவுபெற கீழே உள்ள இணைப்பைக் கிளிக் செய்க.', 'பதிவுபெறுதல்', 'இது விரைவானது மற்றும் எளிதானது.\r\n', 'மின்னஞ்சல் முகவரி\r\n', 'கடவுச்சொல்லை உறுதிப்படுத்தவும்\r\n', 'கைபேசி எண்\r\n', 'ஏற்கனவே உறுப்பினரா?\r\n', 'இங்கே உள்நுழைக\r\n', '\r\nநீங்கள் உள்ளிட்ட மின்னஞ்சல் ஏற்கனவே உள்ளது!', 'கடவுச்சொல் பொருந்தவில்லை என்பதை உறுதிப்படுத்தவும்!\r\n', 'குறியீடு சரிபார்ப்பு\r\n', 'உங்கள் மின்னஞ்சலுக்கு சரிபார்ப்புக் குறியீட்டை அனுப்பியுள்ளோம் - \r\n', 'உங்கள் மின்னஞ்சலை நீங்கள் இன்னும் சரிபார்க்கவில்லை போல் தெரிகிறது -\r\n', 'சரிபார்ப்புக் குறியீட்டை உள்ளிடவும்\r\n', 'நீங்கள் தவறான குறியீட்டை உள்ளிட்டுள்ளீர்கள்!\r\n', 'வீடு', 'வெளியேறு', 'தேடல்', 'அனைத்து நிகழ்வுகளும்', 'புதிய நிகழ்வைச் சேர்க்கவும்', 'டாஷ்போர்டு', 'நிகழ்வுகள்', 'தொழில்', 'இடம்', 'துறை', 'தேதி', 'கட்டணம்', 'வடிகட்டியைப் பயன்படுத்துக', 'பொறியியல்', 'இசை', 'கல்வி', 'ஆங்கிலம்', 'தமிழ்', 'கணினி', 'சென்னை', 'மதுரை', 'கோயம்புத்தூர்', 'மும்பை', 'இன்று', 'நாளை', 'வாரம்', 'மாதம்', 'இலவசம்', 'பணம்', 'நிகழ்வு விவரங்கள்', 'தலைப்பு', 'தலைப்பை உள்ளிடுக', 'குறுகிய விளக்கம்', 'குறுகிய விளக்கத்தை உள்ளிடவும்', 'சுருக்கமான விளக்கம்', 'சுருக்கமான விளக்கத்தை உள்ளிடவும்', 'இருப்பிடத்தை உள்ளிடவும்', 'மொபைலை உள்ளிடவும்', 'நிகழ்வு பேனர் படம்', 'கோப்பை தேர்ந்தெடுங்கள்', 'நிகழ்வு கட்டணம்', 'பதிவு இணைப்பு', 'படிவத்திற்கான இணைப்பு', 'சமர்ப்பிக்கவும்', 'நிகழ்வு வெற்றிகரமாக சேர்க்கப்பட்டது !!', 'மன்னிக்கவும், நிகழ்வு சேர்க்கப்படவில்லை.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `usertable`
 --
 
@@ -83,7 +172,9 @@ CREATE TABLE `usertable` (
 
 INSERT INTO `usertable` (`id`, `email`, `password`, `code`, `status`, `mobile`, `role`) VALUES
 (18, 'revan@cyces.co', '$2y$10$c.9iBnHXJHusmKyPuweJZO9z0F4dag9Bk.y0lSujhNARomuBLmGsm', 107856, 'verified', '9999999999', 'ADMIN'),
-(19, 'senthil@cyces.co', '$2y$10$lymFBD7.6yk4p23rAmrwhu2wea0WafT7Jdln78RnLKuHyTJ2mvpgG', 107856, 'verified', '9500254950', 'USER');
+(19, 'senthil@cyces.co', '$2y$10$lymFBD7.6yk4p23rAmrwhu2wea0WafT7Jdln78RnLKuHyTJ2mvpgG', 107856, 'verified', '9500254950', 'USER'),
+(20, 'lskdfl@gmial.com', '$2y$10$a98F5NjLh9K7OT7oXMBV9u3yU/5UV4/KPWs//Ic1Xzfh9yooxqm3u', 525060, 'notverified', '1211322333', 'USER'),
+(21, 'revan@testmail.cccc', '$2y$10$7n.TU5qpybaPcvJ3IEjqZuVzwpLnMywGZ3WligcMkptuoIYX56OM6', 471313, 'notverified', '5595565556', 'USER');
 
 --
 -- Indexes for dumped tables
@@ -94,6 +185,13 @@ INSERT INTO `usertable` (`id`, `email`, `password`, `code`, `status`, `mobile`, 
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `strings`
+--
+ALTER TABLE `strings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `lang` (`lang`) USING HASH;
 
 --
 -- Indexes for table `usertable`
@@ -110,13 +208,13 @@ ALTER TABLE `usertable`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
